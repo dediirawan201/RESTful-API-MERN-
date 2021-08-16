@@ -1,13 +1,12 @@
 import express from 'express';
+import { getProducts,saveProduct } from '../controllers/productController.js';
 
 const router = express.Router();
 
-router.get('/',(req,res) => {
-    res.send()
-})
-
-router.post('/',(req,res) => {
-    res.send('welcome to post')
-})
+router.get('/', getProducts);
+router.get('/:id');
+router.post('/', saveProduct);
+router.patch('/');
+router.delete('/');
 
 export default router;
