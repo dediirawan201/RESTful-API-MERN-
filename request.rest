@@ -8,3 +8,12 @@ Content-Type: application/json
     "title": "Product 2",
     "price": 2
 }
+
+###
+PATCH http://localhost:3000/product/6119d8d3b0602e3738a6f1fe
+Content-Type: application/json
+
+{
+    "title": "Product updated",
+    "price": 2000
+}
