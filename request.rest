@@ -7,15 +7,19 @@ POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-    "title": "Product 2",
-    "price": 2
+    "title": "Product 3",
+    "price": 4
 }
 
 ###
-PATCH http://localhost:3000/product/6119d8d3b0602e3738a6f1fe
+PATCH http://localhost:3000/product/611a00dac0191c283c880b62
 Content-Type: application/json
 
 {
     "title": "Product updated",
     "price": 2000
 }
+
+###
+
+DELETE  http://localhost:3000/product/611a00dac0191c283c880b62

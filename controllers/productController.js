@@ -29,9 +29,22 @@ export const saveProduct = async(req,res) => {
 }
 
 export const updateProduct = async(req,res) => {
+    const cekId = await Product.findById(req.params.id);
+    if(!cekId) return res.status(404).json({message: "Data tidak ditemukan"}); 
     try {
         const updatedProduct = await Product.updateOne({_id: req.params.id}, {$set: req.body});
         res.status(200).json(updatedProduct);
+    } catch (error) {
+        res.status(400).json({message: error.message});
+    }
+}
+
+export const deleteProduct = async(req,res) => {
+    const cekId = await Product.findById(req.params.id);
+    if(!cekId) return res.status(404).json({message: "Data tidak ditemukan"})
+    try {
+        const deletedProduct = await Product.deleteOne({_id: req.params.id});
+        res.status(200).json(deletedProduct);
     } catch (error) {
         res.status(400).json({message: error.message});
     }
